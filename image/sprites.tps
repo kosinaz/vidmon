@@ -181,58 +181,8 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">sprites/agent1.png</key>
-            <key type="filename">sprites/agent2.png</key>
-            <key type="filename">sprites/agent3.png</key>
-            <key type="filename">sprites/agent4.png</key>
-            <key type="filename">sprites/agent5.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>24,24,48,48</rect>
-                <key>scale9Paddings</key>
-                <rect>24,24,48,48</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">sprites/audiobar.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>4,8,7,16</rect>
-                <key>scale9Paddings</key>
-                <rect>4,8,7,16</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">sprites/audioborder.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>13,10,27,20</rect>
-                <key>scale9Paddings</key>
-                <rect>13,10,27,20</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
             <key type="filename">sprites/close.png</key>
             <key type="filename">sprites/info.png</key>
-            <key type="filename">sprites/music.png</key>
             <key type="filename">sprites/pause.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -248,8 +198,10 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">sprites/exit.png</key>
-            <key type="filename">sprites/goldmoney.png</key>
+            <key type="filename">sprites/down1.png</key>
+            <key type="filename">sprites/down5.png</key>
+            <key type="filename">sprites/up1.png</key>
+            <key type="filename">sprites/up5.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -258,13 +210,14 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>20,20,40,40</rect>
+                <rect>7,22,15,43</rect>
                 <key>scale9Paddings</key>
-                <rect>20,20,40,40</rect>
+                <rect>7,22,15,43</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">sprites/guard.png</key>
+            <key type="filename">sprites/down2.png</key>
+            <key type="filename">sprites/up4.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -273,13 +226,49 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>80,80,160,160</rect>
+                <rect>8,21,15,41</rect>
                 <key>scale9Paddings</key>
-                <rect>80,80,160,160</rect>
+                <rect>8,21,15,41</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">sprites/money.png</key>
+            <key type="filename">sprites/down3.png</key>
+            <key type="filename">sprites/up3.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>7,19,15,39</rect>
+                <key>scale9Paddings</key>
+                <rect>7,19,15,39</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">sprites/down4.png</key>
+            <key type="filename">sprites/up2.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>7,21,15,41</rect>
+                <key>scale9Paddings</key>
+                <rect>7,21,15,41</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">sprites/load.png</key>
+            <key type="filename">sprites/music0.png</key>
+            <key type="filename">sprites/music1.png</key>
+            <key type="filename">sprites/music2.png</key>
+            <key type="filename">sprites/music3.png</key>
             <key type="filename">sprites/playon.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -292,6 +281,53 @@
                 <rect>16,16,32,32</rect>
                 <key>scale9Paddings</key>
                 <rect>16,16,32,32</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">sprites/right1.png</key>
+            <key type="filename">sprites/right2.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>8,20,16,40</rect>
+                <key>scale9Paddings</key>
+                <rect>8,20,16,40</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">sprites/right3.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>8,20,15,40</rect>
+                <key>scale9Paddings</key>
+                <rect>8,20,15,40</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">sprites/right4.png</key>
+            <key type="filename">sprites/right5.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>8,20,15,39</rect>
+                <key>scale9Paddings</key>
+                <rect>8,20,15,39</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
