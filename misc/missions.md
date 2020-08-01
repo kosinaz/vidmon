@@ -1,9 +1,9 @@
 # Missions
 
-## 2014. jan. 22. Érdekességek az internet világáról 
+## 2014. jan. 22. Érdekességek az internet világáról
 
-### Mission #1: Állítsd meg a hajhullást! 
+### Mission #1: Állítsd meg a Hajhullást
 
-Fegyver: szuper fésű
+Ellenség: hajhullák
 
-Ellenség: hajfantomok
+Főellenség: A Hajhullás, aki minden második körben idéz egy hajhullát
