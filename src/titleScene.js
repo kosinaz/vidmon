@@ -27,14 +27,14 @@ export default class TitleScene extends Phaser.Scene {
     this.cameras.main.fadeIn(100);
     const bg = this.add.image(512, 288, 'bg');
     bg.setDisplaySize(1024, 576);
-    this.add.text(512, 96, 'Invisible\nIssues', {
+    this.add.text(512, 96, 'Vidmon', {
       fontSize: '56px',
       fontFamily: 'font',
       align: 'center',
     }).setOrigin(0.5);
-    this.scene.run('InfoScene');
+    // this.scene.run('InfoScene');
     this.scene.run('MusicScene');
-    const play = new Button(this, 512, 528, 'sprites', 'playon');
+    const play = new Button(this, 512, 478, 'sprites', 'playon');
     play.once('click', () => {
       play.disableInteractive();
       this.cameras.main.fadeOut(300);
