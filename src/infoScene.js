@@ -23,7 +23,7 @@ export default class InfoScene extends Phaser.Scene {
    */
   create() {
     let opened = false;
-    const info = new Button(this, 40, 40, 'sprites', 'info');
+    const info = new Button(this, 64, 64, 'sprites', 'info');
     info.on('click', () => {
       if (!opened) {
         window.visible = true;
@@ -50,15 +50,16 @@ export default class InfoScene extends Phaser.Scene {
     bg.fillRect(-256, -128, 512, 256);
     bg.setAlpha(0.95);
     const div1 = this.add.text(0, 0,
-        `Art by Zoltan Kosina
-based on PK01 by Philip Klevestav
-and on top-down-sci-fi-shooter-characters 
-by tatermand
-Fonts by Typodermic Fonts
-Audio by Zapsplat www.zapsplat.com
-and Tabletop Audio tabletopaudio.com`, {
+        `Grafika
+JustVidman (adaptálta: Kosina Zoltán)
+Betűk
+AlfaSlabOne - José Miguel Solé B.
+Zene
+Pokemon Theme Song Instrumental részlet
+JustVidman - Smile (Kalapács piano version) lassú verzió
+JustVidman - Tudod... Hmmm... short loop remix`, {
           fontSize: '14px',
-          fontFamily: 'font2',
+          fontFamily: 'Arial',
           color: 'lightgray',
           lineSpacing: 14,
           align: 'center',

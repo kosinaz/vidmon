@@ -35,7 +35,7 @@ export default class MusicScene extends Phaser.Scene {
       loop: true,
       volume: 0,
     });
-    const musicbutton = new Button(this, 0, 0, 'sprites', 'music');
+    const musicbutton = new Button(this, 0, 0, 'sprites', 'music3');
     musicbutton.on('click', () => {
       if (this.fadeout) {
         this.fadeout.stop();
@@ -45,32 +45,22 @@ export default class MusicScene extends Phaser.Scene {
       }
       if (this.volume === 0) {
         this.volume = 0.3;
+        musicbutton.list[0].setFrame('music1');
       } else if (this.volume === 0.3) {
         this.volume = 0.6;
+        musicbutton.list[0].setFrame('music2');
       } else if (this.volume === 0.6) {
         this.volume = 1;
+        musicbutton.list[0].setFrame('music3');
       } else if (this.volume === 1) {
         this.volume = 0;
+        musicbutton.list[0].setFrame('music0');
       }
       if (this.current) {
         this.current.volume = this.volume;
       }
-      musicbar1.visible = this.volume > 0;
-      musicbar2.visible = this.volume > 0.3;
-      musicbar3.visible = this.volume > 0.6;
     });
-    const musicborder = this.add.image(42, 0, 'sprites', 'audioborder');
-    const musicbar1 = this.add.image(34, 0, 'sprites', 'audiobar');
-    musicbar1.visible = this.volume > 0;
-    const musicbar2 = this.add.image(49, 0, 'sprites', 'audiobar');
-    musicbar2.visible = this.volume > 0.3;
-    const musicbar3 = this.add.image(64, 0, 'sprites', 'audiobar');
-    musicbar3.visible = this.volume > 0.6;
-    this.add.container(936, 40, [
-      musicborder,
-      musicbar1,
-      musicbar2,
-      musicbar3,
+    this.add.container(960, 64, [
       musicbutton,
     ]);
   }
