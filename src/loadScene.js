@@ -59,9 +59,9 @@ export default class LoadScene extends Phaser.Scene {
     this.load.image('bg', 'image/bg.png');
     this.load.image('title', 'image/title.png');
     this.load.tilemapTiledJSON('map', 'data/map.json');
-    this.load.image('tileset', 'image/tileset.png');
+    this.load.image('tileset', 'data/tileset.png');
     this.load.audio('menu', 'audio/Hmmm.mp3');
-    this.load.audio('level', 'audio/Hmmm.mp3');
+    this.load.audio('level', 'audio/smile piano slow.mp3');
     this.load.audio('win', 'audio/Hmmm.mp3');
     this.load.audio('title', 'audio/title.mp3');
   }

@@ -49,7 +49,7 @@ export default class TitleScene extends Phaser.Scene {
       }
     });
     this.cameras.main.once('camerafadeoutcomplete', () => {
-      this.scene.start('MenuScene', {
+      this.scene.start('LevelScene', {
         level: 0,
       });
     });

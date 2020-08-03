@@ -46,22 +46,23 @@ export default class InfoScene extends Phaser.Scene {
       }
     });
     const bg = this.add.graphics();
-    bg.fillStyle(0x000000);
-    bg.fillRect(-256, -128, 512, 256);
+    bg.fillStyle(0xffffff);
+    bg.fillRect(-360, -200, 720, 400);
     bg.setAlpha(0.95);
     const div1 = this.add.text(0, 0,
         `Grafika
-JustVidman (adaptálta: Kosina Zoltán)
-Betűk
-AlfaSlabOne - José Miguel Solé B.
+Rajzok - JustVidman (adaptálta: Kosina Zoltán)
+Ikonok - Delapouite, Guard13007
+Betűk - AlfaSlabOne - José Miguel Solé B.
+
 Zene
 Pokemon Theme Song Instrumental részlet
 JustVidman - Smile (Kalapács piano version) lassú verzió
 JustVidman - Tudod... Hmmm... short loop remix`, {
-          fontSize: '14px',
-          fontFamily: 'Arial',
-          color: 'lightgray',
-          lineSpacing: 14,
+          fontSize: '22px',
+          fontFamily: 'font',
+          color: 'black',
+          lineSpacing: 10,
           align: 'center',
         }).setOrigin(0.5);
     const window = this.add.container(512, 904, [bg, div1]);
