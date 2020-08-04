@@ -9,14 +9,7 @@ import InfoScene from './infoScene.js';
 
 new Phaser.Game({
   type: Phaser.AUTO,
-  backgroundColor: '#000',
-  maxLights: 20,
-  physics: {
-    default: 'arcade',
-    arcade: {
-      // debug: true,
-    },
-  },
+  backgroundColor: '#fff',
   scale: {
     parent: 'game-container',
     mode: Phaser.Scale.FIT,
