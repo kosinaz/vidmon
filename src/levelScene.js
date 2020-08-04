@@ -31,14 +31,6 @@ export default class LevelScene extends Phaser.Scene {
     this.map.createStaticLayer('below', tileset, 0, 0);
     this.walls = this.map.createStaticLayer('next', tileset, 0, 0);
     const starttile = this.walls.findByIndex(317);
-    this.player = this.add.sprite(
-        starttile.getCenterX() - 48,
-        starttile.getCenterY(),
-        'sprites',
-        'down3',
-    ).setOrigin(0.5, 1);
-    this.map.createStaticLayer('above1', tileset, 0, 0);
-    this.map.createStaticLayer('above2', tileset, 0, 0);
     this.anims.create({
       key: 'down',
       frames: [
@@ -65,6 +57,7 @@ export default class LevelScene extends Phaser.Scene {
         {key: 'sprites', frame: 'right4'},
         {key: 'sprites', frame: 'right5'},
         {key: 'sprites', frame: 'right4'},
+        {key: 'sprites', frame: 'right3'},
       ],
       frameRate: 30,
       // repeat: -1,
@@ -85,7 +78,95 @@ export default class LevelScene extends Phaser.Scene {
       frameRate: 30,
       // repeat: -1,
     });
+    this.player = this.add.sprite(
+        starttile.getCenterX() - 48,
+        starttile.getCenterY(),
+        'sprites',
+        'down3',
+    ).setOrigin(0.5, 0.7);
+    this.anims.create({
+      key: 'hajhulladown',
+      frames: [
+        {key: 'sprites', frame: 'hajhulladown2'},
+        {key: 'sprites', frame: 'hajhulladown1'},
+        {key: 'sprites', frame: 'hajhulladown2'},
+        {key: 'sprites', frame: 'hajhulladown3'},
+        {key: 'sprites', frame: 'hajhulladown4'},
+        {key: 'sprites', frame: 'hajhulladown5'},
+        {key: 'sprites', frame: 'hajhulladown4'},
+        {key: 'sprites', frame: 'hajhulladown3'},
+      ],
+      frameRate: 9,
+      repeat: -1,
+    });
+    // this.player.play('down');
+    this.anims.create({
+      key: 'hajhullaright',
+      frames: [
+        {key: 'sprites', frame: 'hajhullaright2'},
+        {key: 'sprites', frame: 'hajhullaright1'},
+        {key: 'sprites', frame: 'hajhullaright2'},
+        {key: 'sprites', frame: 'hajhullaright3'},
+        {key: 'sprites', frame: 'hajhullaright4'},
+        {key: 'sprites', frame: 'hajhullaright5'},
+        {key: 'sprites', frame: 'hajhullaright4'},
+        {key: 'sprites', frame: 'hajhullaright3'},
+      ],
+      frameRate: 9,
+      repeat: -1,
+    });
+    // this.player.play('right');
+    this.anims.create({
+      key: 'hajhullaup',
+      frames: [
+        {key: 'sprites', frame: 'hajhullaup2'},
+        {key: 'sprites', frame: 'hajhullaup1'},
+        {key: 'sprites', frame: 'hajhullaup2'},
+        {key: 'sprites', frame: 'hajhullaup3'},
+        {key: 'sprites', frame: 'hajhullaup4'},
+        {key: 'sprites', frame: 'hajhullaup5'},
+        {key: 'sprites', frame: 'hajhullaup4'},
+        {key: 'sprites', frame: 'hajhullaup3'},
+      ],
+      frameRate: 9,
+      repeat: -1,
+    });
     // this.player.play('up');
+    this.enemies = [];
+    this.walls.forEachTile((tile) => {
+      if (tile.index > 362 && tile.index < 373) {
+        const hajhulla = this.add.sprite(
+            tile.getCenterX(),
+            tile.getCenterY() + 48,
+            'sprites',
+            'hajhulladown3',
+        );
+        hajhulla.setOrigin(0.5, 0.7);
+        if (this.enemies.length % 2) {
+          this.tweens.add({
+            targets: hajhulla,
+            x: '+=96',
+            duration: 2500,
+            flipX: true,
+            yoyo: true,
+            repeat: -1,
+          });
+          hajhulla.play('hajhullaright');
+        } else {
+          this.tweens.add({
+            targets: hajhulla,
+            y: '+=144',
+            duration: 3750,
+            yoyo: true,
+            repeat: -1,
+          });
+          hajhulla.play('hajhulladown');
+        }
+        this.enemies.push(hajhulla);
+      }
+    });
+    this.map.createStaticLayer('above1', tileset, 0, 0);
+    this.map.createStaticLayer('above2', tileset, 0, 0);
     this.cameras.main.startFollow(this.player);
     this.cameras.main.setBounds(0, 0, this.walls.width, this.walls.height);
   }
