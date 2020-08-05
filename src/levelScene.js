@@ -169,6 +169,16 @@ export default class LevelScene extends Phaser.Scene {
     this.map.createStaticLayer('above2', tileset, 0, 0);
     this.cameras.main.startFollow(this.player);
     this.cameras.main.setBounds(0, 0, this.walls.width, this.walls.height);
+    this.time.addEvent({delay: 1000, loop: true, callback: () => {
+      this.enemies.forEach((enemy) => {
+        // eslint-disable-next-line new-cap
+        if (Phaser.Math.Distance.Between(
+            enemy.x, enemy.y, this.player.x, this.player.y,
+        ) < 150) {
+          this.scene.start('BattleScene');
+        }
+      });
+    }});
   }
 
   /**

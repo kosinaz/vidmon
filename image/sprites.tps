@@ -181,6 +181,21 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
+            <key type="filename">sprites/baratkozoelado.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>46,100,91,200</rect>
+                <key>scale9Paddings</key>
+                <rect>46,100,91,200</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">sprites/close.png</key>
             <key type="filename">sprites/info.png</key>
             <key type="filename">sprites/pause.png</key>
@@ -264,6 +279,65 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">sprites/fejeslabasmelles.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>30,50,60,100</rect>
+                <key>scale9Paddings</key>
+                <rect>30,50,60,100</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">sprites/hajhulla.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>42,100,84,200</rect>
+                <key>scale9Paddings</key>
+                <rect>42,100,84,200</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">sprites/hajhulladown1.png</key>
+            <key type="filename">sprites/hajhulladown2.png</key>
+            <key type="filename">sprites/hajhulladown3.png</key>
+            <key type="filename">sprites/hajhulladown4.png</key>
+            <key type="filename">sprites/hajhulladown5.png</key>
+            <key type="filename">sprites/hajhullaright1.png</key>
+            <key type="filename">sprites/hajhullaright2.png</key>
+            <key type="filename">sprites/hajhullaright3.png</key>
+            <key type="filename">sprites/hajhullaright4.png</key>
+            <key type="filename">sprites/hajhullaright5.png</key>
+            <key type="filename">sprites/hajhullaup1.png</key>
+            <key type="filename">sprites/hajhullaup2.png</key>
+            <key type="filename">sprites/hajhullaup3.png</key>
+            <key type="filename">sprites/hajhullaup4.png</key>
+            <key type="filename">sprites/hajhullaup5.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>8,24,16,48</rect>
+                <key>scale9Paddings</key>
+                <rect>8,24,16,48</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">sprites/load.png</key>
             <key type="filename">sprites/music0.png</key>
             <key type="filename">sprites/music1.png</key>
@@ -281,6 +355,21 @@
                 <rect>16,16,32,32</rect>
                 <key>scale9Paddings</key>
                 <rect>16,16,32,32</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">sprites/player.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>39,100,79,200</rect>
+                <key>scale9Paddings</key>
+                <rect>39,100,79,200</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>

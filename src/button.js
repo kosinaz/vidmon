@@ -23,6 +23,7 @@ export default class Button extends Phaser.GameObjects.Container {
       scene.add.text(0, -2, text, {
         fontSize: '24px',
         fontFamily: 'font',
+        color: 'black',
       }),
     ]);
     scene.children.add(this);
@@ -45,6 +46,7 @@ export default class Button extends Phaser.GameObjects.Container {
           yoyo: true,
           onComplete: () => {
             this.tweening = false;
+            this.emit('clicked');
           },
         });
       }
@@ -53,7 +55,6 @@ export default class Button extends Phaser.GameObjects.Container {
       this.down = false;
     });
     this.list[1].setOrigin(0.5);
-    this.list[1].setShadow(0, 2, '#333333');
     this.text = text;
   }
 

@@ -58,6 +58,7 @@ export default class LoadScene extends Phaser.Scene {
     this.load.atlas('sprites', 'image/sprites.png', 'image/sprites.json');
     this.load.image('bg', 'image/bg.png');
     this.load.image('title', 'image/title.png');
+    this.load.image('utca', 'image/utca.png');
     this.load.tilemapTiledJSON('map', 'data/map.json');
     this.load.image('tileset', 'data/tileset.png');
     this.load.audio('menu', 'audio/Hmmm.mp3');
@@ -78,6 +79,6 @@ export default class LoadScene extends Phaser.Scene {
     for (let i = 0; i < 15; i += 1) {
       Profile.level[i] = parseInt(localStorage.getItem('level' + i));
     }
-    this.scene.start('TitleScene');
+    this.scene.start('BattleScene');
   }
 }
