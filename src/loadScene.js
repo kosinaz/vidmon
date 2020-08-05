@@ -79,6 +79,6 @@ export default class LoadScene extends Phaser.Scene {
     for (let i = 0; i < 15; i += 1) {
       Profile.level[i] = parseInt(localStorage.getItem('level' + i));
     }
-    this.scene.start('BattleScene');
+    this.scene.start('TitleScene');
   }
 }

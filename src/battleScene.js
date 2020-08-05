@@ -61,6 +61,14 @@ export default class BattleScene extends Phaser.Scene {
     this.baratface.once('clicked', () => {
       this.chosen('baratkozoelado', 'Barátkozó eladó');
     });
+    this.action = this.add.text(25, 50, '', {
+      fontSize: '24px',
+      fontFamily: 'font',
+      color: 'black',
+      lineSpacing: 10,
+      align: 'left',
+    }).setOrigin(0, 0.5);
+    this.hajhullahealth = 100;
   }
   /**
    *
@@ -107,10 +115,10 @@ export default class BattleScene extends Phaser.Scene {
           this, 512, 546, 'sprites', 'button', 'Éneklés',
       );
     }
-    this.action1.once('clicked', () => {
+    this.action1.on('clicked', () => {
       this.act(0);
     });
-    this.action2.once('clicked', () => {
+    this.action2.on('clicked', () => {
       this.act(1);
     });
   }
@@ -124,47 +132,65 @@ export default class BattleScene extends Phaser.Scene {
     this.playerface.destroy();
     this.valasztott.destroy();
     this.valasszakciot.destroy();
-    this.action1.destroy();
-    this.action2.destroy();
     if (this.vidmon === 'fejeslabasmelles') {
       if (!i) {
-        this.valasszvidmont = this.add.text(25, 50, 'Fejes lábas melles' +
-        ' seggest ugrik Hajhulla arcába. Hajhulla veszít 33 életet!', {
-          fontSize: '24px',
-          fontFamily: 'font',
-          color: 'black',
-          lineSpacing: 10,
-          align: 'left',
-        }).setOrigin(0, 0.5);
+        this.action.text = 'Fejes lábas melles' +
+          ' seggest ugrik Hajhulla arcába. Hajhulla veszít 34 életet!';
+        this.hajhullahealth -= 34;
+        if (this.hajhullahealth > 0) {
+          this.action.text += '\nHajhulla hajba kap Fejes lábas mellessel.' +
+            ' Fejes lábas melles veszít 25 életet.';
+        } else {
+          this.action.text += '\nHajhulla összeesik.';
+          this.action1.destroy();
+          this.action2.destroy();
+          this.catch = new Button(
+              this, 512, 496, 'sprites', 'button', 'Elkapom',
+          );
+          this.leave = new Button(
+              this, 512, 546, 'sprites', 'button', 'Itt hagyom',
+          ); this.catch.on('clicked', () => {
+            this.scene.resume('LevelScene');
+            this.scene.stop();
+          });
+          this.leave.on('clicked', () => {
+            this.scene.resume('LevelScene');
+            this.scene.stop();
+          });
+        }
       } else {
-        this.valasszvidmont = this.add.text(25, 50, 'Fejes lábas melles' +
-          ' zserbót süt Hajhullának. Hajhulla belefeledkezik az evésbe.', {
-          fontSize: '24px',
-          fontFamily: 'font',
-          color: 'black',
-          lineSpacing: 10,
-          align: 'left',
-        }).setOrigin(0, 0.5);
+        this.action.text = 'Fejes lábas melles' +
+          ' zserbót süt Hajhullának. Hajhulla belefeledkezik az evésbe.';
       }
     } else {
       if (!i) {
-        this.valasszvidmont = this.add.text(25, 50, 'Barátkozó eladó' +
-          ' doktorbácsisat játszik a késével. Hajhulla veszít 50 életet!', {
-          fontSize: '24px',
-          fontFamily: 'font',
-          color: 'black',
-          lineSpacing: 10,
-          align: 'left',
-        }).setOrigin(0, 0.5);
+        this.action.text = 'Barátkozó eladó' +
+          ' doktorbácsisat játszik a késével. Hajhulla veszít 50 életet!';
+        this.hajhullahealth -= 50;
+        if (this.hajhullahealth > 0) {
+          this.action.text += '\nHajhulla hajba kap Barátkozó eladóval.' +
+          ' Barátkozó eladó veszít 25 életet.';
+        } else {
+          this.action.text += '\nHajhulla összeesik.';
+          this.action1.destroy();
+          this.action2.destroy();
+          this.catch = new Button(
+              this, 512, 496, 'sprites', 'button', 'Elkapom',
+          );
+          this.leave = new Button(
+              this, 512, 546, 'sprites', 'button', 'Itt hagyom',
+          ); this.catch.on('clicked', () => {
+            this.scene.resume('LevelScene');
+            this.scene.stop();
+          });
+          this.leave.on('clicked', () => {
+            this.scene.resume('LevelScene');
+            this.scene.stop();
+          });
+        }
       } else {
-        this.valasszvidmont = this.add.text(25, 50, 'Barátkozó eladó' +
-          ' a fridzsiderben alvó hegyekről énekel. Hajhulla ledermed.', {
-          fontSize: '24px',
-          fontFamily: 'font',
-          color: 'black',
-          lineSpacing: 10,
-          align: 'left',
-        }).setOrigin(0, 0.5);
+        this.action.text = 'Barátkozó eladó' +
+          ' a fridzsiderben alvó hegyekről énekel. Hajhulla ledermed.';
       }
     }
   }

@@ -175,7 +175,10 @@ export default class LevelScene extends Phaser.Scene {
         if (Phaser.Math.Distance.Between(
             enemy.x, enemy.y, this.player.x, this.player.y,
         ) < 150) {
-          this.scene.start('BattleScene');
+          this.scene.pause();
+          this.scene.launch('BattleScene');
+          this.enemies.splice(this.enemies.indexOf(enemy), 1);
+          enemy.destroy();
         }
       });
     }});
