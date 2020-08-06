@@ -62,7 +62,7 @@ export default class BattleScene extends Phaser.Scene {
       this.chosen('baratkozoelado', 'Barátkozó eladó');
     });
     this.action = this.add.text(25, 50, '', {
-      fontSize: '24px',
+      fontSize: '18px',
       fontFamily: 'font',
       color: 'black',
       lineSpacing: 10,

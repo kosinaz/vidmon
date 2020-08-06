@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="envelope.svg"
+   id="svg8"
+   version="1.1"
+   style="height: 512px; width: 512px;"
+   viewBox="0 0 512 512">
+  <metadata
+     id="metadata14">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg8"
+     inkscape:window-maximized="0"
+     inkscape:window-y="0"
+     inkscape:window-x="0"
+     inkscape:cy="177.42493"
+     inkscape:cx="30.450875"
+     inkscape:zoom="0.73535156"
+     showgrid="false"
+     id="namedview10"
+     inkscape:window-height="930"
+     inkscape:window-width="1465"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <rect
+     inkscape:export-ydpi="12"
+     inkscape:export-xdpi="12"
+     inkscape:export-filename="C:\Projects\vidmon\image\sprites\mail.png"
+     id="rect2"
+     ry="64"
+     rx="64"
+     width="512"
+     height="512"
+     fill-opacity="1"
+     fill="#ffffff" />
+  <g
+     id="g6"
+     class="">
+    <path
+       id="path4"
+       fill-opacity="1"
+       fill="#000000"
+       d="m 182.78,80.125 c 3.367,19.498 10.608,52.67 19.126,84.813 8.126,30.663 17.73,60.122 25.063,75.062 57.968,-0.962 148.212,-16.707 252.343,-46.344 C 387.556,123.633 290.826,94.28 182.78,80.126 Z M 164.657,85 c -65.62,51.243 -106.43,120.106 -138.5,196.25 54.866,-38.51 111.644,-60.42 169.313,-70.906 -3.995,-12.636 -7.88,-26.486 -11.626,-40.625 -8.425,-31.79 -15.554,-64.12 -19.188,-84.72 z m 322.281,125.906 c -74.123,21.218 -141.43,35.68 -196.25,42.813 24.018,51.794 36.448,106.688 43.688,160.936 70.634,-58.76 125.36,-118.495 152.563,-203.75 z M 201.53,228.28 c -56.563,9.917 -111.78,30.946 -165.56,68.907 89.478,61.396 189.91,97.037 279.874,119.844 -7.362,-55.057 -20.104,-109.997 -44.75,-161.03 -18.39,1.897 -35.134,2.875 -49.938,2.875 h -5.344 l -2.718,-4.625 c -3.898,-6.69 -7.77,-15.598 -11.563,-25.97 z" />
+  </g>
+</svg>

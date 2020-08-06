@@ -23,7 +23,7 @@ export default class InfoScene extends Phaser.Scene {
    */
   create() {
     let opened = false;
-    const info = new Button(this, 64, 64, 'sprites', 'info');
+    const info = new Button(this, 48, 48, 'sprites', 'info');
     info.on('click', () => {
       if (!opened) {
         window.visible = true;

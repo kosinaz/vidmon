@@ -60,7 +60,7 @@ export default class MusicScene extends Phaser.Scene {
         this.current.volume = this.volume;
       }
     });
-    this.add.container(960, 64, [
+    this.add.container(976, 48, [
       musicbutton,
     ]);
   }

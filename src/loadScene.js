@@ -59,6 +59,7 @@ export default class LoadScene extends Phaser.Scene {
     this.load.image('bg', 'image/bg.png');
     this.load.image('title', 'image/title.png');
     this.load.image('utca', 'image/utca.png');
+    this.load.image('mailbanner', 'image/mailbanner.png');
     this.load.tilemapTiledJSON('map', 'data/map.json');
     this.load.image('tileset', 'data/tileset.png');
     this.load.audio('title', 'audio/title.mp3');

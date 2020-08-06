@@ -23,6 +23,7 @@ export default class LevelScene extends Phaser.Scene {
    * @memberof LevelScene
    */
   create(data) {
+    this.scene.launch('MailScene');
     this.scene.get('MusicScene').play(1);
     this.map = this.make.tilemap({
       key: 'map',
@@ -192,7 +193,8 @@ export default class LevelScene extends Phaser.Scene {
    * @memberof LevelScene
    */
   update() {
-    if (this.input.activePointer.isDown && !this.moving) {
+    if (this.input.activePointer.isDown && !this.moving &&
+      this.input.activePointer.y > 96) {
       const worldPoint = this.cameras.main.getWorldPoint(
           this.input.activePointer.x,
           this.input.activePointer.y,
