@@ -57,8 +57,8 @@ Betűk - AlfaSlabOne - José Miguel Solé B.
 
 Zene
 Pokemon Theme Song Instrumental részlet
-JustVidman - Smile (Kalapács piano version) lassú verzió
-JustVidman - Tudod... Hmmm... short loop remix`, {
+ZapSplat - Stay Away
+ZapSplat - Tuff Enough`, {
           fontSize: '22px',
           fontFamily: 'font',
           color: 'black',

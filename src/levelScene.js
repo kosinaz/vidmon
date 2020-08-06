@@ -182,6 +182,9 @@ export default class LevelScene extends Phaser.Scene {
         }
       });
     }});
+    this.events.on('resume', () => {
+      this.scene.get('MusicScene').play(1);
+    });
   }
 
   /**

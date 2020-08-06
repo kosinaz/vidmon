@@ -33,7 +33,8 @@ export default class TitleScene extends Phaser.Scene {
     const play = new Button(this, 512, 480, 'sprites', 'playon');
     play.once('click', () => {
       play.disableInteractive();
-      this.cameras.main.fadeOut(300);
+      this.cameras.main.fadeOut(3000);
+      this.scene.get('MusicScene').play(0);
     });
     this.input.keyboard.on('keydown', (event) => {
       event.preventDefault();

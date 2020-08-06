@@ -22,7 +22,7 @@ export default class BattleScene extends Phaser.Scene {
    * @memberof BattleScene
    */
   create(data) {
-    this.scene.get('MusicScene').play(1);
+    this.scene.get('MusicScene').play(2);
     this.add.image(512, 288, 'utca');
     this.add.image(100, 400, 'sprites', 'player').setOrigin(0.5, 1);
     this.add.image(774, 400, 'sprites', 'hajhulla').setOrigin(0.5, 1);

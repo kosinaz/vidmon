@@ -23,7 +23,7 @@ export default class MusicScene extends Phaser.Scene {
    */
   create() {
     this.volume = 1;
-    this.menu = this.sound.add('menu', {
+    this.menu = this.sound.add('title', {
       loop: true,
       volume: 0,
     });
@@ -31,7 +31,7 @@ export default class MusicScene extends Phaser.Scene {
       loop: true,
       volume: 0,
     });
-    this.win = this.sound.add('win', {
+    this.win = this.sound.add('battle', {
       loop: true,
       volume: 0,
     });
