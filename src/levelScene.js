@@ -24,6 +24,7 @@ export default class LevelScene extends Phaser.Scene {
    */
   create(data) {
     this.scene.launch('MailScene');
+    this.scene.launch('EbayScene');
     this.scene.get('MusicScene').play(1);
     this.map = this.make.tilemap({
       key: 'map',

@@ -8,6 +8,7 @@ import InfoScene from './infoScene.js';
 import BattleScene from './battleScene.js';
 import MusicScene from './musicScene.js';
 import MailScene from './mailScene.js';
+import EbayScene from './ebayScene.js';
 
 new Phaser.Game({
   type: Phaser.AUTO,
@@ -26,6 +27,7 @@ new Phaser.Game({
     LevelScene,
     PauseScene,
     MailScene,
+    EbayScene,
     WinScene,
     BattleScene,
     MusicScene,
