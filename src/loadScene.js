@@ -1,5 +1,3 @@
-import Profile from './profile.js';
-
 /**
  * Represent the load screen of the game.
  *
@@ -22,12 +20,12 @@ export default class LoadScene extends Phaser.Scene {
           {
             type: 'image',
             key: 'bar',
-            url: 'image/bar.png',
+            url: 'image/loadingbar.png',
           },
           {
             type: 'image',
             key: 'border',
-            url: 'image/border.png',
+            url: 'image/loadingbarbg.png',
           },
         ],
       },
@@ -61,24 +59,18 @@ export default class LoadScene extends Phaser.Scene {
     this.load.image('utca', 'image/utca.png');
     this.load.image('mailbanner', 'image/mailbanner.png');
     this.load.tilemapTiledJSON('map', 'data/map.json');
-    this.load.image('tileset', 'data/tileset.png');
+    this.load.image('tileset', 'image/tileset.png');
     this.load.audio('title', 'audio/title.mp3');
     this.load.audio('level', 'audio/music_zapsplat_stay_away.mp3');
     this.load.audio('battle', 'audio/music_zapsplat_tuff_enough.mp3');
   }
 
   /**
-   * Creates the start button.
+   * Starts the Title scene.
    *
    * @memberof LoadScene
    */
   create() {
-    Profile.star = parseInt(localStorage.getItem('star')) || 0;
-    Profile.progress = parseInt(localStorage.getItem('progress')) || 0;
-    Profile.time = parseInt(localStorage.getItem('time')) || 1;
-    for (let i = 0; i < 15; i += 1) {
-      Profile.level[i] = parseInt(localStorage.getItem('level' + i));
-    }
     this.scene.start('TitleScene');
   }
 }

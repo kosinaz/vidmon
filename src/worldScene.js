@@ -1,26 +1,24 @@
-import Profile from './profile.js';
-
 /**
  * Represent the home screen of the game.
  *
  * @export
- * @class LevelScene
+ * @class WorldScene
  * @extends {Phaser.Scene}
  */
-export default class LevelScene extends Phaser.Scene {
+export default class WorldScene extends Phaser.Scene {
   /**
-   * Creates an instance of LevelScene.
-   * @memberof LevelScene
+   * Creates an instance of WorldScene.
+   * @memberof WorldScene
    */
   constructor() {
-    super('LevelScene');
+    super('WorldScene');
   }
 
   /**
-   * Creates the content of the LevelScene.
+   * Creates the content of the WorldScene.
    *
    * @param {*} data
-   * @memberof LevelScene
+   * @memberof WorldScene
    */
   create(data) {
     this.scene.launch('MailScene');
@@ -31,8 +29,8 @@ export default class LevelScene extends Phaser.Scene {
     });
     const tileset = this.map.addTilesetImage('tileset', 'tileset');
     this.map.createStaticLayer('below', tileset, 0, 0);
-    this.walls = this.map.createStaticLayer('next', tileset, 0, 0);
-    const starttile = this.walls.findByIndex(317);
+    this.obstacles = this.map.createStaticLayer('obstacles', tileset, 0, 0);
+    const starttile = this.obstacles.findByIndex(317);
     this.anims.create({
       key: 'down',
       frames: [
@@ -135,7 +133,7 @@ export default class LevelScene extends Phaser.Scene {
     });
     // this.player.play('up');
     this.enemies = [];
-    this.walls.forEachTile((tile) => {
+    this.obstacles.forEachTile((tile) => {
       if (tile.index > 362 && tile.index < 373) {
         const hajhulla = this.add.sprite(
             tile.getCenterX(),
@@ -170,7 +168,7 @@ export default class LevelScene extends Phaser.Scene {
     this.map.createStaticLayer('above1', tileset, 0, 0);
     this.map.createStaticLayer('above2', tileset, 0, 0);
     this.cameras.main.startFollow(this.player);
-    this.cameras.main.setBounds(0, 0, this.walls.width, this.walls.height);
+    this.cameras.main.setBounds(0, 0, this.obstacles.width, this.obstacles.height);
     this.time.addEvent({delay: 1000, loop: true, callback: () => {
       this.enemies.forEach((enemy) => {
         // eslint-disable-next-line new-cap
@@ -191,7 +189,7 @@ export default class LevelScene extends Phaser.Scene {
 
   /**
    *
-   * @memberof LevelScene
+   * @memberof WorldScene
    */
   update() {
     if (this.input.activePointer.isDown && !this.moving &&
@@ -200,33 +198,33 @@ export default class LevelScene extends Phaser.Scene {
           this.input.activePointer.x,
           this.input.activePointer.y,
       );
-      const pointerTileX = this.walls.worldToTileX(worldPoint.x);
-      const pointerTileY = this.walls.worldToTileY(worldPoint.y);
-      const playerTileX = this.walls.worldToTileX(this.player.x);
-      const playerTileY = this.walls.worldToTileX(this.player.y);
+      const pointerTileX = this.obstacles.worldToTileX(worldPoint.x);
+      const pointerTileY = this.obstacles.worldToTileY(worldPoint.y);
+      const playerTileX = this.obstacles.worldToTileX(this.player.x);
+      const playerTileY = this.obstacles.worldToTileX(this.player.y);
       const xd = pointerTileX - playerTileX;
       const yd = pointerTileY - playerTileY;
       const nextTileX = playerTileX + (xd > 0 ? 1 : -1);
       const nextTileY = playerTileY + (yd > 0 ? 1 : -1);
       if (Math.abs(xd) > Math.abs(yd) &&
-        !this.walls.getTileAt(nextTileX, playerTileY)) {
+        !this.obstacles.getTileAt(nextTileX, playerTileY)) {
         this.moving = true;
         this.player.play('right');
         this.player.flipX = xd < 0;
         this.tweens.add({
           targets: this.player,
-          x: this.walls.tileToWorldX(nextTileX) + 24,
+          x: this.obstacles.tileToWorldX(nextTileX) + 24,
           duration: 250,
           onComplete: () => {
             this.moving = false;
           },
         });
-      } else if (!this.walls.getTileAt(playerTileX, nextTileY)) {
+      } else if (!this.obstacles.getTileAt(playerTileX, nextTileY)) {
         this.moving = true;
         this.player.play(yd > 0 ? 'down' : 'up');
         this.tweens.add({
           targets: this.player,
-          y: this.walls.tileToWorldY(nextTileY) + 24,
+          y: this.obstacles.tileToWorldY(nextTileY) + 24,
           duration: 250,
           onComplete: () => {
             this.moving = false;

@@ -150,11 +150,11 @@ export default class BattleScene extends Phaser.Scene {
           this.leave = new Button(
               this, 512, 546, 'sprites', 'button', 'Itt hagyom',
           ); this.catch.on('clicked', () => {
-            this.scene.resume('LevelScene');
+            this.scene.resume('WorldScene');
             this.scene.stop();
           });
           this.leave.on('clicked', () => {
-            this.scene.resume('LevelScene');
+            this.scene.resume('WorldScene');
             this.scene.stop();
           });
         }
@@ -180,11 +180,11 @@ export default class BattleScene extends Phaser.Scene {
           this.leave = new Button(
               this, 512, 546, 'sprites', 'button', 'Itt hagyom',
           ); this.catch.on('clicked', () => {
-            this.scene.resume('LevelScene');
+            this.scene.resume('WorldScene');
             this.scene.stop();
           });
           this.leave.on('clicked', () => {
-            this.scene.resume('LevelScene');
+            this.scene.resume('WorldScene');
             this.scene.stop();
           });
         }

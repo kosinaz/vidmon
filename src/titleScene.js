@@ -1,5 +1,4 @@
 import Button from './button.js';
-import Profile from './profile.js';
 
 /**
  * Represent the title screen of the game.
@@ -50,7 +49,7 @@ export default class TitleScene extends Phaser.Scene {
       }
     });
     this.cameras.main.once('camerafadeoutcomplete', () => {
-      this.scene.start('LevelScene', {
+      this.scene.start('WorldScene', {
         level: 0,
       });
     });

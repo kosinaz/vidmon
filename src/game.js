@@ -1,9 +1,6 @@
 import LoadScene from './loadScene.js';
 import TitleScene from './titleScene.js';
-import MenuScene from './menuScene.js';
-import LevelScene from './levelScene.js';
-import PauseScene from './pauseScene.js';
-import WinScene from './winScene.js';
+import WorldScene from './worldScene.js';
 import InfoScene from './infoScene.js';
 import BattleScene from './battleScene.js';
 import MusicScene from './musicScene.js';
@@ -22,13 +19,10 @@ new Phaser.Game({
   scene: [
     LoadScene,
     TitleScene,
-    MenuScene,
     InfoScene,
-    LevelScene,
-    PauseScene,
+    WorldScene,
     MailScene,
     EbayScene,
-    WinScene,
     BattleScene,
     MusicScene,
   ],

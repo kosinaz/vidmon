@@ -23,15 +23,15 @@ export default class MusicScene extends Phaser.Scene {
    */
   create() {
     this.volume = 1;
-    this.menu = this.sound.add('title', {
-      loop: true,
+    this.title = this.sound.add('title', {
+      loop: false,
       volume: 0,
     });
     this.level = this.sound.add('level', {
       loop: true,
       volume: 0,
     });
-    this.win = this.sound.add('battle', {
+    this.battle = this.sound.add('battle', {
       loop: true,
       volume: 0,
     });
@@ -64,21 +64,32 @@ export default class MusicScene extends Phaser.Scene {
       musicbutton,
     ]);
   }
+
   /**
+   * Plays the specified track.
+   * If there is already a track playing, and it's different than the specified
+   * one track, it fades out the current track, then fades in the new one.
+   * If it's the specified track that is now playing, it won't be interrupted.
+   * If nothing is playing, it simply fades in the specified track.
    *
-   *
-   * @param {number} music
+   * @param {string} track
    * @memberof MusicScene
    */
-  play(music) {
+  play(track) {
+    /* If the currently playing track is the same as the track to be played. */
+    if (this.currentName === track) {
+      /* Do nothing. */
+      return;
+    }
+    /* If a track change is currently in progress, but the user has initiated
+    another one, fast forward the change. */
     if (this.fadeout) {
       this.fadeout.stop();
+      this.current.volume = 0;
     }
     if (this.fadein) {
       this.fadein.stop();
-    }
-    if (this.current === [this.menu, this.level, this.win][music]) {
-      return;
+      this.current.volume = this.volume;
     }
     const previous = this.current;
     if (previous && this.volume > 0) {
@@ -91,7 +102,7 @@ export default class MusicScene extends Phaser.Scene {
         },
       });
     }
-    const next = [this.menu, this.level, this.win][music];
+    const next = [this.title, this.level, this.battle][music];
     next.volume = 0;
     next.play();
     this.current = next;
